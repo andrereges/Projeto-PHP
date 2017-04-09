@@ -1,7 +1,9 @@
 <?php
-    $_DATABASE = 'loja';
-    $_HOST = 'localhost';
-    $_USER = 'root';
-    $_PASSWORD = 'yes';
 
-    $conexao = mysqli_connect($_HOST, $_USER, $_PASSWORD, $_DATABASE);
+function pg_connection_string_from_database_url() {
+  extract(parse_url($_ENV["DATABASE_URL"]));
+  return "user=$user password=$pass host=$host dbname=" . substr($path, 1);
+}
+
+$conexao = pg_connect(pg_connection_string_from_database_url());
+?>
