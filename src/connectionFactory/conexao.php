@@ -1,9 +1,10 @@
 <?php
+$dsn = "pgsql:"
+    . "host=ec2-54-221-220-82.compute-1.amazonaws.com;"
+    . "dbname=de9h600nuj7b14;"
+    . "user=evpnkpokmazgmd;"
+    . "port=5432;"
+    . "sslmode=require;"
+    . "password=49ea80d27e2955236cf1efc1bb55ebc74f21263b80a0628daa2c9fa9a32da8b1";
 
-function pg_connection_string_from_database_url() {
-  extract(parse_url($_ENV["DATABASE_URL"]));
-  return "user=$user password=$pass host=$host dbname=" . substr($path, 1);
-}
-
-$conexao = pg_connect(pg_connection_string_from_database_url());
-?>
+$db = new PDO($dsn);
