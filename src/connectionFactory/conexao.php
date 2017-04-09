@@ -7,4 +7,4 @@ $dsn = "pgsql:"
     . "sslmode=require;"
     . "password=49ea80d27e2955236cf1efc1bb55ebc74f21263b80a0628daa2c9fa9a32da8b1";
 
-$db = new PDO($dsn);
+$conexao = new PDO($dsn);
