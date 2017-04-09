@@ -1,7 +1,7 @@
 <?php 
     require_once("includes/cabecalho.php");
     
-    verificaUsuario();
+    #verificaUsuario();
     $produtoDAO = new ProdutoDAO($conexao);
     $produtos = $produtoDAO->lista();
 
